@@ -1,4 +1,6 @@
 import NavBar from "../components/NavBar"
+import Section from "../components/Section"
+
 
 import coder from "../assets/coder.svg"
 
@@ -19,7 +21,16 @@ function HomePage() {
                     </div>
                 </div>
             </header>
-         
+            <main className="px-18">
+                <Section title="About" id="about">
+                    <p className="text-[1.1rem] text-stone-100">
+                        I'm passionate Frontend Developer dedicated to building dynamic, user-friendly web applications. With a strong foundation in React, Tailwind CSS, Bootstrap, Redux, React Query, and React Hook Form, I create seamless and efficient user experiences.
+                        I enjoy turning ideas into visually appealing and functional interfaces, always striving to write clean, maintainable, and scalable code. Whether it's crafting responsive designs, optimizing performance, or managing state effectively, I love the challenge of bringing web applications to life.
+                        I'm always eager to learn new technologies and collaborate on exciting projects. Let's create something amazing together! 🚀
+                    </p>
+                </Section>
+                
+            </main>
         </div>
     )
 }
