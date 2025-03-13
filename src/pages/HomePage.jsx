@@ -1,14 +1,39 @@
 import NavBar from "../components/NavBar"
+import Footer from "../components/Footer"
 import Section from "../components/Section"
 import ServiceCard from "../components/ServiceCard"
 import ProjectCard from "../components/ProjectCard"
-
+import SkillCard from "../components/SkillCard"
+import ContactForm from "../components/ContactForm"
 import coder from "../assets/coder.svg"
 import project1 from "../assets/pro_1.jpg"
 import project2 from "../assets/pro_2.jpg"
 import project3 from "../assets/pro_3.jpg"
+import { 
+    SiHtml5, 
+    SiCss3, 
+    SiJavascript, 
+    SiReact, 
+    SiTailwindcss, 
+    SiBootstrap, 
+    SiRedux, 
+    SiReactquery, 
+    SiReacthookform, 
+    SiReactrouter 
+} from "react-icons/si";
 
-
+const skills = [
+    { icon: SiHtml5, color: "text-orange-500", name: "HTML5" },
+    { icon: SiCss3, color: "text-blue-500", name: "CSS3" },
+    { icon: SiJavascript, color: "text-yellow-500", name: "JavaScript" },
+    { icon: SiReact, color: "text-blue-400", name: "React" },
+    { icon: SiTailwindcss, color: "text-cyan-400", name: "Tailwind CSS" },
+    { icon: SiBootstrap, color: "text-purple-600", name: "Bootstrap" },
+    { icon: SiRedux, color: "text-purple-500", name: "Redux" },
+    { icon: SiReactquery, color: "text-red-500", name: "React Query" },
+    { icon: SiReacthookform, color: "text-pink-500", name: "React Hook Form" },
+    { icon: SiReactrouter, color: "text-red-600", name: "React Router" },
+];
 
 const services = [
     {
@@ -91,8 +116,21 @@ function HomePage() {
                         ))}
                     </div>
                 </Section>
-              
+                <Section title="Skills" id="skills">
+                    <div className="flex flex-wrap justify-center gap-12">
+                        {skills.map((skill, index) => (
+                            <SkillCard key={index} {...skill} />
+                        ))}
+                    </div>
+                </Section>
+                <Section title="Contact Me" id="contact">
+                    <p className="text-stone-100">Have a project in mind or just want to say hello? Feel free to drop me a message—I’d love to hear from you!</p>
+                    <div className="flex justify-center">
+                        <ContactForm />
+                    </div>
+                </Section>
             </main>
+            <Footer />
         </div>
     )
 }
