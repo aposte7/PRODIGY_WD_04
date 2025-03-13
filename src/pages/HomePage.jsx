@@ -1,8 +1,23 @@
 import NavBar from "../components/NavBar"
 import Section from "../components/Section"
-
-
+import ServiceCard from "../components/ServiceCard"
 import coder from "../assets/coder.svg"
+
+const services = [
+    {
+        title: "Frontend Development",
+        description: "Building modern, responsive, and dynamic web applications using React, Tailwind, and Bootstrap.",
+    },
+    {
+        title: "State Management & API Integration",
+        description: "Using Redux, React Query, and API integration to create dynamic, data-driven applications.",
+    },
+    {
+        title: "UI/UX & Performance Optimization",
+        description: "Transforming designs into functional UI and optimizing performance for smooth user experiences.",
+    },
+];
+
 
 
 function HomePage() {
@@ -29,7 +44,15 @@ function HomePage() {
                         I'm always eager to learn new technologies and collaborate on exciting projects. Let's create something amazing together! 🚀
                     </p>
                 </Section>
-                
+                <Section title="Service" id="service">
+                    <div className="grid md:grid-cols-3 justify-between gap-12 text-center">
+                        {services.map((service, index) => (
+                            <ServiceCard key={index} {...service} />
+                        ))}
+                    </div>
+                    <a href="#" className="mb-12 text-cyan-200 border border-blue-400 px-2 py-1.5 rounded-md w-fit mx-auto text-center">Hire Me</a>
+                </Section>
+               
             </main>
         </div>
     )
